@@ -1,17 +1,14 @@
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function About() {
   return (
     <section className="px-6 py-16 max-w-7xl mx-auto">
-      <div className="text-center mb-16">
-        <h2 className="text-2xl font-light">About Us</h2>
-      </div>
-
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative h-[600px] rounded-lg overflow-hidden">
           <Image
-            src="/about.png"
+            src="/face-two.png"
             alt="Natural beauty"
             fill
             className="object-cover"
@@ -29,7 +26,7 @@ export default function About() {
           </div>
 
           <h2 className="text-5xl md:text-6xl lg:text-[72px] font-light leading-[1.1]">
-            <span className="text-yellow-500">Organic</span> to Your Skin
+            <span className="text-yellow-500">Customised</span> for Your Skin
           </h2>
 
           <p className="text-gray-600 text-lg max-w-md font-light">
@@ -41,10 +38,10 @@ export default function About() {
             help you achieve the glowing skin you've always dreamed of.
           </p>
 
-          <button className="flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 hover:bg-gray-50 transition-colors">
+          <Button className="flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 transition-colors">
             Learn More
             <ArrowRight className="h-5 w-5" />
-          </button>
+          </Button>
         </div>
       </div>
     </section>

@@ -17,41 +17,41 @@ const testimonials: Testimonial[] = [
     id: 1,
     name: "Jane Cooper",
     location: "Yogyakarta",
-    image: "/testimonial-1.jpg",
+    image: "/model-1.png",
     quote:
-      "Wild and Organic has become my skincare sanctuary! The commitment to using natural, organic ingredients is evident in the incredible results. My skin feels truly nurtured, and I love knowing that I'm embracing the untamed beauty of nature in every product.\n\nA brand that speaks to my soul!",
+      "DermAI has become my skincare sanctuary! The commitment to using natural, organic ingredients is evident in the incredible results. My skin feels truly nurtured, and I love knowing that I'm embracing the untamed beauty of nature in every product.\n\nA solution that speaks to my soul!",
   },
   {
     id: 2,
     name: "Sarah Johnson",
     location: "Jakarta",
-    image: "/testimonial-2.jpg",
+    image: "/model-2.png",
     quote:
-      "The natural ingredients have transformed my skincare routine. My skin has never felt better, and I appreciate the brand's commitment to organic beauty solutions.",
+      "The natural ingredients have transformed my skincare routine. My skin has never felt better, and I appreciate the solution's commitment to organic beauty solutions.",
   },
   {
     id: 3,
     name: "Emily Chen",
     location: "Surabaya",
-    image: "/testimonial-3.jpg",
+    image: "/model-3.png",
     quote:
-      "Finding Wild and Organic was a game-changer for my sensitive skin. The products are gentle yet effective, and I can feel the difference organic ingredients make.",
+      "Finding DermAI was a game-changer for my sensitive skin. The products are gentle yet effective, and I can feel the difference organic ingredients make.",
   },
   {
     id: 4,
     name: "Maria Garcia",
     location: "Bali",
-    image: "/testimonial-4.jpg",
+    image: "/model-4.png",
     quote:
-      "I've tried many skincare brands, but Wild and Organic stands out for its purity and effectiveness. The results speak for themselves!",
+      "I've tried many skincare solutions, but DermAI stands out for its purity and effectiveness. The results speak for themselves!",
   },
   {
     id: 5,
     name: "Lisa Park",
     location: "Bandung",
-    image: "/testimonial-5.jpg",
+    image: "/model-2.png",
     quote:
-      "The attention to detail in each product is remarkable. My skin has never looked more radiant, and I love supporting a brand that prioritizes natural ingredients.",
+      "The attention to detail in each product is remarkable. My skin has never looked more radiant, and I love supporting a solution that prioritizes natural ingredients.",
   },
 ];
 
@@ -60,7 +60,6 @@ export default function Testimonials() {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  // Minimum swipe distance (in px)
   const minSwipeDistance = 50;
 
   const nextTestimonial = () => {
@@ -97,12 +96,10 @@ export default function Testimonials() {
     }
   };
 
-  // Calculate indices for the carousel
   const getCircularIndex = (index: number) => {
     return (index + testimonials.length) % testimonials.length;
   };
 
-  // Handle keyboard navigation
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowLeft") {
@@ -128,7 +125,6 @@ export default function Testimonials() {
         onTouchMove={onTouchMove}
         onTouchEnd={onTouchEnd}
       >
-        {/* Decorative elements */}
         <div className="absolute -left-8 top-1/2 -translate-y-1/2 text-[24px] text-gray-300 font-light hidden md:block">
           +
         </div>
@@ -136,7 +132,6 @@ export default function Testimonials() {
           +
         </div>
 
-        {/* Navigation buttons - Hidden on mobile */}
         <button
           onClick={prevTestimonial}
           className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-16 p-2 hover:text-yellow-500 transition-colors hidden md:block"
@@ -152,7 +147,6 @@ export default function Testimonials() {
           <ChevronRight className="h-8 w-8" />
         </button>
 
-        {/* Mobile navigation indicators */}
         <div className="flex justify-center gap-2 mb-4 md:hidden">
           {testimonials.map((_, index) => (
             <button
@@ -166,7 +160,6 @@ export default function Testimonials() {
           ))}
         </div>
 
-        {/* Testimonial content */}
         <div className="space-y-8">
           <div className="border border-gray-200 p-4 md:p-8 text-center">
             <p className="text-base md:text-lg font-light leading-relaxed whitespace-pre-line">
@@ -174,7 +167,6 @@ export default function Testimonials() {
             </p>
           </div>
 
-          {/* Profile images carousel */}
           <div className="flex items-center justify-center gap-2 md:gap-4">
             {[-2, -1, 0, 1, 2].map((offset) => {
               const testimonialIndex = getCircularIndex(currentIndex + offset);
@@ -208,7 +200,6 @@ export default function Testimonials() {
             })}
           </div>
 
-          {/* Author info */}
           <div className="text-center">
             <h3 className="text-lg md:text-xl font-medium">
               {testimonials[currentIndex].name}

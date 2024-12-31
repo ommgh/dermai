@@ -6,10 +6,12 @@ import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
+import useCurrentUser from "@/hooks/use-current-user";
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const router = useRouter();
+  const user = useCurrentUser();
 
   return (
     <header className="relative py-6 px-6">
@@ -36,19 +38,19 @@ export default function Header() {
             Home
           </Link>
           <Link
-            href="/product"
+            href="/"
             className="text-gray-800 font-light hover:text-gray-600"
           >
             Product
           </Link>
           <Link
-            href="/outlets"
+            href="/"
             className="text-gray-800 font-light hover:text-gray-600"
           >
-            Working
+            Features
           </Link>
           <Link
-            href="/about"
+            href="/"
             className="text-gray-800 font-light hover:text-gray-600"
           >
             Demo
@@ -57,13 +59,11 @@ export default function Header() {
 
         {/* Actions */}
         <div className="flex items-center gap-3">
-          <Button
-            onClick={() => {
-              router.push("/auth/login");
-            }}
-          >
-            Login
-          </Button>
+          {user ? (
+            <Button onClick={() => router.push("/dashboard")}>Dashboard</Button>
+          ) : (
+            <Button onClick={() => router.push("/auth/login")}>Login</Button>
+          )}
         </div>
       </div>
 
@@ -79,25 +79,25 @@ export default function Header() {
               Home
             </Link>
             <Link
-              href="/product"
+              href="/"
               className="text-gray-800 font-light hover:text-gray-600 py-2 px-4 rounded-lg hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
               Product
             </Link>
             <Link
-              href="/outlets"
+              href="/"
               className="text-gray-800 font-light hover:text-gray-600 py-2 px-4 rounded-lg hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              Outlets
+              Features
             </Link>
             <Link
-              href="/about"
+              href="/"
               className="text-gray-800 font-light hover:text-gray-600 py-2 px-4 rounded-lg hover:bg-gray-50"
               onClick={() => setIsMenuOpen(false)}
             >
-              About Us
+              Demo
             </Link>
           </nav>
         </div>

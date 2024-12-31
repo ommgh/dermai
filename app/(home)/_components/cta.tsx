@@ -1,5 +1,7 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function CTA() {
   return (
@@ -19,23 +21,22 @@ export default function CTA() {
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-8">
             <h2 className="text-4xl md:text-5xl lg:text-[64px] font-light leading-[1.1]">
-              Let's Controlling Your Skin Today!{" "}
-              <span className="inline-block">With Health and</span>{" "}
-              <span className="inline-flex items-center">
-                Organic
-                <span className="inline-block ml-2 text-[24px] text-white/20">
-                  +
-                </span>
+              Let's Nourish Your Skin Today!{" "}
+              <span className="inline-block mb-5">With DermAI</span>{" "}
+              <span className="inline-block ml-2 text-[24px] text-white/20">
+                +
               </span>
             </h2>
-            <button className="flex items-center gap-2 px-6 py-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors text-black">
-              Discover Now
-              <ArrowRight className="h-5 w-5" />
-            </button>
+            <Link href="/dashboard">
+              <Button className="flex items-center gap-2 px-6 py-3 rounded-full bg-yellow-500 hover:bg-yellow-400 transition-colors text-black">
+                Discover Now
+                <ArrowRight className="h-5 w-5" />
+              </Button>
+            </Link>
           </div>
           <div className="relative h-[400px] lg:h-[500px]">
             <Image
-              src="/product-cta.png"
+              src="/cta.png"
               alt="Product in hand"
               fill
               className="object-contain"

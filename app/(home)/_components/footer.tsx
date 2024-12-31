@@ -39,19 +39,19 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div className=" flex flex-col md:flex-row justify-between items-center gap-8">
           {/* Links */}
           <div className="flex gap-8 text-sm text-gray-600">
-            <Link href="/terms" className="hover:text-gray-900">
+            <Link href="/" className="hover:text-gray-900">
               Terms and Condition
             </Link>
-            <Link href="/privacy" className="hover:text-gray-900">
+            <Link href="/" className="hover:text-gray-900">
               Privacy Policy
             </Link>
           </div>
 
           {/* Social Links and Back to Top */}
-          <div className="flex items-center gap-6">
+          <div className=" mt-5 flex items-center gap-6">
             <div className="flex items-center gap-4">
               <Link
                 href="#"

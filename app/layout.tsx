@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { SessionProvider } from "next-auth/react";
+import { auth } from "@/auth";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -13,16 +15,19 @@ export const metadata: Metadata = {
     "DermAI is a personalized skincare solution that helps you discover your best skin with AI-powered precision.",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
+  const session = await auth();
   return (
-    <html lang="en">
-      <body className={`${spaceGrotesk.variable} font-sans bg-[#FDF8F3]`}>
-        {children}
-      </body>
-    </html>
+    <SessionProvider session={session}>
+      <html lang="en">
+        <body className={`${spaceGrotesk.variable} font-sans bg-[#FDF8F3]`}>
+          {children}
+        </body>
+      </html>
+    </SessionProvider>
   );
 }

@@ -1,5 +1,7 @@
+import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
@@ -28,36 +30,24 @@ export default function Hero() {
             Discover Your Best Skin With AI-Powered Precision
           </p>
           <div className="flex flex-col sm:flex-row gap-8 items-start sm:items-center">
-            <button className="flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200 hover:bg-gray-50 transition-colors">
-              Discover
-              <ArrowRight className="h-5 w-5" />
-            </button>
-            <div className="flex items-center gap-4">
-              <div className="flex -space-x-3">
-                {[1, 2, 3].map((i) => (
-                  <div
-                    key={i}
-                    className="h-10 w-10 rounded-full border-2 border-white bg-gray-200"
-                  />
-                ))}
-              </div>
-              <div>
-                <div className="font-medium text-lg">260+</div>
-                <div className="text-sm text-gray-600">People satisfied</div>
-              </div>
-            </div>
+            <Link href="/dashboard">
+              <Button className="flex items-center gap-2 px-6 py-3 rounded-full border border-gray-200">
+                Discover
+                <ArrowRight className="h-5 w-5" />
+              </Button>
+            </Link>
           </div>
         </div>
-        {/* <div className="relative h-[500px] lg:h-[600px]">
+        <div className="relative h-[500px] lg:h-[600px]">
           <Image
-            src="/product-hero.png"
+            src="/dual.png"
             alt="Skincare product"
             fill
             className="object-contain"
             sizes="(max-width: 768px) 100vw, 50vw"
             priority
           />
-        </div> */}
+        </div>
       </div>
     </div>
   );
