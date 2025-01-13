@@ -9,7 +9,7 @@ interface DashboardLayoutProps {
 
 export default function DashboardLayout({ children }: DashboardLayoutProps) {
   return (
-    <div className="flex h-screen bg-[#FDF8F3]">
+    <div className="flex h-screen bg-[#FDF8F3] rounded-3xl">
       {/* Sidebar */}
       <aside className="w-64 bg-white border-r border-gray-200 p-6 flex flex-col">
         <Link href="/">

@@ -8,10 +8,10 @@ export default function About() {
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         <div className="relative h-[600px] rounded-lg overflow-hidden">
           <Image
-            src="/face-two.png"
+            src="/dual.png"
             alt="Natural beauty"
             fill
-            className="object-cover"
+            className=" object-cover "
             sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>

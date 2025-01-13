@@ -40,7 +40,7 @@ export default function Hero() {
         </div>
         <div className="relative h-[500px] lg:h-[600px]">
           <Image
-            src="/dual.png"
+            src="/face-two.png"
             alt="Skincare product"
             fill
             className="object-contain"
